@@ -2,6 +2,7 @@ import { assets, infoList, toolsData } from "@/assets/assets";
 import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
+import SkillsRadarChart from "./SkillsRadarChart";
 
 const About = ({ isDarkMode }) => {
   return (
@@ -117,6 +118,16 @@ const About = ({ isDarkMode }) => {
             ))}
           </motion.ul>
         </motion.div>
+      </motion.div>
+
+      {/* Skills Radar Chart Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="mt-20"
+      >
+        <SkillsRadarChart isDarkMode={isDarkMode} />
       </motion.div>
     </motion.div>
   );

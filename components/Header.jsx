@@ -2,6 +2,7 @@ import { assets } from '@/assets/assets'
 import Image from 'next/image'
 import React from 'react'
 import { motion } from "motion/react"
+import TypeWriter from './TypeWriter'
 
 const Header = () => {
   return (
@@ -9,7 +10,7 @@ const Header = () => {
       <motion.div
       initial={{scale: 0}}
       whileInView={{scale: 1}}
-      transition={{duration: 0.8, type: 'spring', stiffness: 100}}
+      transition={{duration: 0.9, type: 'spring', stiffness: 100}}
       className='mb-4'
       >
         <Image src={assets.profile_img} alt='' className='rounded-full w-32'/>
@@ -25,7 +26,22 @@ const Header = () => {
     whileInView={{y: 0, opacity: 1}}
     transition={{duration: 0.8, delay: 0.5}}
     className='text-3xl sm:text-6xl lg:text-[66px] font-Ovo'>
-        Associate Software Developer</motion.h1>
+        <TypeWriter 
+          strings={[
+            'Associate Software Developer',
+            'Full Stack Developer', 
+            'Mobile App Developer',
+            'UI/UX Designer',
+            'Frontend Specialist',
+            'Backend Engineer'
+          ]}
+          typeSpeed={80}
+          backSpeed={40}
+          delay={2000}
+          loop={true}
+          className="text-3xl sm:text-6xl lg:text-[66px] font-Ovo"
+        />
+    </motion.h1>
 
         <motion.p
         initial={{opacity: 0}}
